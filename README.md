@@ -16,8 +16,8 @@ Instructions:
   * That = PushBullet push a Note
   * Title = PSScript
   * Message = Your executed powershell script as-is. 
-    1. If you want to execute executable, you can use following syntax:
-    2. &"C:\Program Files (x86)\foobar2000\foobar2000.exe" /stop
+    1. If you want to execute executable, you can use following syntax:**&"C:\Program Files (x86)\foobar2000\foobar2000.exe" /stop**
+    4. Or test easily with: **Write-Warning "Test PowerShell"**
     3. Otherwise create your own scriptlet, it will execute it
 7. Set the PushBullet token in the script on first line
 8. Run the PowerShell script (If it won't run by default, type first: Set-ExecutionPolicy -ExecutionPolicy Unrestricted )
