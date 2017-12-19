@@ -1,5 +1,7 @@
-# Google Home PC POSH
-Control your Windows 10 PC with Google Home (and assistant) using IFTTT and PushBullet - with powershell
+# Google Home PC control with PowerShell
+Control your Windows 10 PC with Google Home (and assistant) using IFTTT and PushBullet - with PowerShell
+
+Only Windows 10 supported!
 
 
 Instructions:
