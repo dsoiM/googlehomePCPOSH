@@ -21,4 +21,4 @@ Instructions:
     3. Otherwise create your own scriptlet, it will execute it
 7. Set the PushBullet token in the script on first line
 8. Run the PowerShell script (If it won't run by default, type first: Set-ExecutionPolicy -ExecutionPolicy Unrestricted )
-9. Talk to your google box with what your defined in 6a
+9. Talk to your google box with what your defined in 6 "This"
