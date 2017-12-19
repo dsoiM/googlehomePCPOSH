@@ -4,7 +4,6 @@ $token = "TOKEN_HERE"
 #Set this to "Continue" to get more verbose logs
 $verbosepreference = "SilentlyContinue"
 
-
 Function WaitFor-SocketMessages {
     
     
@@ -23,7 +22,7 @@ Function WaitFor-SocketMessages {
             
             }
 
-           write-verbose "Connected to $($url)" 
+           write-Host "Connected to Pushbullet, waiting for stream events..." 
 
             $Size = 1024
             $Array = [byte[]] @(,0) * $Size
@@ -80,13 +79,11 @@ function HandleMessage ($msg) {
               $command = $lastPush.body
           
               $deleteresp = Invoke-WebRequest -Uri "https://api.pushbullet.com/v2/pushes/$lastPushID" -Headers @{'Access-Token' = $token} -Method Delete
-              Write-Warning "Executing: $command"
+              Write-Host "Executing: $command"
               Invoke-Expression $command
            }
         }
     }
-
-
 }
 
 
