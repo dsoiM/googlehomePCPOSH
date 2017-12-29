@@ -1,8 +1,9 @@
 #Set here you access token from Pushbullet https://www.pushbullet.com/#settings "Create access token"
-$token = "TOKEN_HERE"
+$token = "o.YumRn34cKMZeLXIdoD8wOGWSNF0S0U7T"
 
 #Set this to "Continue" to get more verbose logs
-$verbosepreference = "SilentlyContinue"
+$verbosepreference = "Continue"
+
 
 Function WaitFor-SocketMessages {
     
@@ -72,16 +73,18 @@ function HandleMessage ($msg) {
         { $_.type -eq "nop"} {write-verbose "ping-pong"}
 
         { $_.type -eq "tickle" -and $_.subtype -eq "push"} {
-          $lastPush = ""
-          $lastPush = ((Invoke-WebRequest -Uri "https://api.pushbullet.com/v2/pushes?active=true" -Headers @{'Access-Token' = $token} -Method Get).Content | ConvertFrom-Json).pushes[0]  
-          if ($lastPush.title -eq "PSScript") {
-              $lastPushID = $lastPush.iden
-              $command = $lastPush.body
+          $lastPushes = ""
+          $lastPushes = ((Invoke-WebRequest -Uri "https://api.pushbullet.com/v2/pushes?active=true" -Headers @{'Access-Token' = $token} -Method Get).Content | ConvertFrom-Json).pushes
+          foreach ($lastPush in $lastPushes) {
+              if ($lastPush.title -eq "PSScript") {
+                  $lastPushID = $lastPush.iden
+                  $command = $lastPush.body
           
-              $deleteresp = Invoke-WebRequest -Uri "https://api.pushbullet.com/v2/pushes/$lastPushID" -Headers @{'Access-Token' = $token} -Method Delete
-              Write-Host "Executing: $command"
-              Invoke-Expression $command
-           }
+                  $deleteresp = Invoke-WebRequest -Uri "https://api.pushbullet.com/v2/pushes/$lastPushID" -Headers @{'Access-Token' = $token} -Method Delete
+                  Write-Host "Executing: $command"
+                  Invoke-Expression $command
+               }
+            }
         }
     }
 }
