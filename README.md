@@ -17,7 +17,7 @@ Instructions:
   * That = PushBullet push a Note
   * Title = PSScript
   * Message = Your executed powershell scriptlet as-is. 
-    1. If you want to execute executable, you can use following syntax: **&"C:\Program Files (x86)\foobar2000\foobar2000.exe" /stop**
+    1. If you want to execute executable, you can use following syntax: **&"C:\Program Files (x86)\foobar2000\foobar2000.exe" /stop** or **&"DisplaySwitch.exe" /external**
     4. Or test easily with: **Write-Warning "Test PowerShell"**
     3. Otherwise create your own scriptlet, it will execute it
 7. Set the PushBullet token in the PushBulletWebSocket.ps1 on first line
