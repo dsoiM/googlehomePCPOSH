@@ -1,5 +1,5 @@
 #Set here you access token from Pushbullet https://www.pushbullet.com/#settings "Create access token"
-$token = "o.YumRn34cKMZeLXIdoD8wOGWSNF0S0U7T"
+$token = "YOUR_TOKEN_HERE"
 
 #Set this to "Continue" to get more verbose logs
 $verbosepreference = "Continue"
