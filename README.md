@@ -3,6 +3,8 @@ Control your PC with Google Home and Assistant - using PowerShell
 
 Uses free IoT cloud services IFTTT (If This Then That) and PushBullet.
 
+Basic concept of this project: You write a PowerShell command or script into IFTTT applet and it gets excecuted on target PC on your Google home command.
+
 Only Windows 10 supported. For earlier windows PowerShell probably needs to be upgraded and have other packages installed.
 
 Instructions:
